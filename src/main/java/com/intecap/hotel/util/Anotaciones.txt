@@ -1,0 +1,26 @@
+crudRepository: save, delete, findById, findAll, count, exists
+PaginationAndSortingRepository extends CrudRepository : findAll(Pageable pageable), findAll(Sort sort)
+JpaRepository: getOne, findAll(Example<S> example, Sort sort), findAllById(Iterable<ID> ids), saveAll(Iterable<S> entities), flush, saveAndFlush(S entity), deleteInBatch(Iterable<T> entities), deleteAllInBatch, getOne(ID id), findAll(Example<S> example), findAll(Example<S> example, Pageable pageable), findAll(Example<S> example, Sort sort), findAllById(Iterable<ID> ids), count, existsById(ID id)
+
+uuid: 128-bit number, 32 hex digits, 5 groups separated by hyphens, 8-4-4-4-12, 16 bytes, 128 bits, 2^128, 3.4x10^38, 340 undecillion, 340,000,000,000,000,000,000,000,000,000,000,000
+uuid: es un identificador único universal, es un número de 128 bits, 32 dígitos hexadecimales, 5 grupos separados por guiones, 8-4-4-4-12, 16 bytes, 128 bits, 2^128, 3.4x10^38, 340 undecillones, 340,000,000,000,000,000,000,000,000,000,000,000
+
+
+select * from customer;
+
+select * from fly;  --Carga perezosa singular..
+select * from fly f join ticket t on f.id = t.fly_id; --carga de lazy hace join y carga todo de golpe
+
+select * from hotel;
+
+select * from ticket;
+select * from reservation;
+select * from tour;
+
+select * from fly where  price < 20.00;
+
+select * from fly where  price between 10 and 15;
+
+select * from fly where origin_name = 'Grecia' and destiny_name = 'Mexico';
+
+select * from fly join ticket t on fly.id = t.fly_id where fly_id =1;
